@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Dropdown with Sorting</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <section
+      class="section-container"
+      aria-labelledby="customer-orders-heading"
+    >
+      <header>
+        <h1 id="customer-orders-heading" class="title-heading">
+          Customer Orders
+        </h1>
+        <i class="fas fa-mail-bulk"></i>
+      </header>
+      <form id="eventForm" class="search-container">
+        <div class="search-and-results">
+          <div class="input-area">
+            <!-- Search Input -->
+            <span id="search-description" class="visually-hidden">
+              Type to search for events. Use the dropdown below to select or
+              sort events.
+            </span>
+            <!-- Sort Order Dropdown -->
+            <label for="sortOrder" class="visually-hidden">Sort events</label>
+            <select id="sortOrder" class="sort-order" aria-label="Sort events">
+              <option value="az">A-Z</option>
+              <option value="za">Z-A</option>
+              <option value="nearest">Date &lt;</option>
+              <option value="furthest">Date &gt;</option>
+            </select>
+            <label for="searchInput" class="visually-hidden"
+              >Search events</label
+            >
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Search by event..."
+              aria-describedby="search-description"
+            />
+            <!-- Submit Button -->
+            <button type="submit" class="submit-button">Submit</button>
+          </div>
+
+          <!-- Results Dropdown -->
+          <ul
+            id="dropdown"
+            class="dropdown"
+            role="listbox"
+            aria-label="Search results"
+          >
+            <!-- Dropdown items will be dynamically inserted here -->
+          </ul>
+        </div>
+
+        <!-- Selected Events Section -->
+        <div class="selected-events">
+          <div
+            id="selectedEventsContainer"
+            class="selected-events-container"
+            aria-live="polite"
+            aria-relevant="additions removals"
+          >
+            <!-- Selected events will appear here -->
+          </div>
+          <button type="button" id="clearAll" class="clear-all-button">
+            Clear All
+          </button>
+        </div>
+      </form>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
