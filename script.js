@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let dropdownChanges = false;
   let selectionChanged = false;
 
-  // Utility Functions
+  // Functions
   const toggleSubmitButton = () => {
     const hasChanges =
       selectedEvents.size !== lastSubmittedEvents.size ||
